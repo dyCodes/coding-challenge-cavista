@@ -50,31 +50,29 @@ const Footer = (props: Props) => {
 					<p className='footer__copyright'>Copyright © 2024 DEMO Streaming. All Rights Reserved.</p>
 				</div>
 
-				<div className='footer__bottom'>
-					<div className='flex-between'>
-						<div className='footer__flex-row'>
-							<Link to='#'>
-								<img src={facebookIcon} alt='Facebook' className='footer__social-icon' />
-							</Link>
-							<Link to='#'>
-								<img src={twitterIcon} alt='Twitter' className='footer__social-icon' />
-							</Link>
-							<Link to='#'>
-								<img src={instagramIcon} alt='Instagram' className='footer__social-icon' />
-							</Link>
-						</div>
+				<div className='footer__bottom flex-between'>
+					<div className='footer__flex-row'>
+						<Link to='#'>
+							<img src={facebookIcon} alt='Facebook' className='footer__social-icon' />
+						</Link>
+						<Link to='#'>
+							<img src={twitterIcon} alt='Twitter' className='footer__social-icon' />
+						</Link>
+						<Link to='#'>
+							<img src={instagramIcon} alt='Instagram' className='footer__social-icon' />
+						</Link>
+					</div>
 
-						<div className='footer__flex-row'>
-							<Link to='#'>
-								<img src={appStoreIcon} alt='App Store' className='footer__store-icon' />
-							</Link>
-							<Link to='#'>
-								<img src={playStoreIcon} alt='Play Store' className='footer__store-icon' />
-							</Link>
-							<Link to='#'>
-								<img src={windowsIcon} alt='Windows Store' className='footer__store-icon' />
-							</Link>
-						</div>
+					<div className='footer__flex-row'>
+						<Link to='#'>
+							<img src={appStoreIcon} alt='App Store' className='footer__store-icon' />
+						</Link>
+						<Link to='#'>
+							<img src={playStoreIcon} alt='Play Store' className='footer__store-icon' />
+						</Link>
+						<Link to='#'>
+							<img src={windowsIcon} alt='Windows Store' className='footer__store-icon' />
+						</Link>
 					</div>
 				</div>
 			</div>
