@@ -1,12 +1,12 @@
 import React from 'react';
-import SearchForm from '../../components/SearchForm/SearchForm';
-import FilterDropdown from '../../components/FilterDropdown/FilterDropdown';
 import MediaGrid from '../../components/UI/MediaGrid/MediaGrid';
 import MediaCard from '../../components/UI/MediaCard/MediaCard';
+import SearchForm from '../../components/SearchForm/SearchForm';
+import FilterDropdown from '../../components/FilterDropdown/FilterDropdown';
 
 interface Props {}
 
-const Movies = (props: Props) => {
+const Series = (props: Props) => {
 	return (
 		<div className='container'>
 			<div className='listing-header flex-between'>
@@ -28,4 +28,4 @@ const Movies = (props: Props) => {
 	);
 };
 
-export default Movies;
+export default Series;

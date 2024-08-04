@@ -1,14 +1,8 @@
 /* Component CSS */
 
-.category-card__img {
-	position: relative;
-	height: 200px;
-	display: grid;
-	place-items: center;
-	background: var(--black-color);
-	margin-bottom: 12px;
-	overflow: hidden;
+.category-card__box {
 }
+
 .category-card__tag {
 	position: absolute;
 	top: 0;
@@ -24,7 +18,4 @@
 }
 
 .category-card__title {
-	color: var(--black-color);
-	font-size: 14px;
-	font-weight: 400;
 }

@@ -1,19 +1,20 @@
 .media-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 10px;
+	gap: 28px 12px;
 }
 
 @media (min-width: 768px) {
 	.media-grid {
 		grid-template-columns: repeat(4, 1fr);
-		gap: 1rem;
+		gap: 2.625rem 1rem;
 	}
 }
 
 @media (min-width: 1024px) {
 	.media-grid {
 		grid-template-columns: repeat(5, 1fr);
+		gap: 2.625rem 1.9rem;
 	}
 }
 
