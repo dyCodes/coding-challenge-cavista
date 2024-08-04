@@ -15,6 +15,7 @@ body {
 	line-height: 1.5;
 	background-color: var(--background-color);
 	color: var(--text-color);
+	scroll-behavior: smooth;
 }
 
 /* Reset CSS */
