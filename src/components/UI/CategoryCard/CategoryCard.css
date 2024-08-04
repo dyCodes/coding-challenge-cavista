@@ -1,7 +1,7 @@
 /* Component CSS */
 
-.category-card__box {
-}
+/* .category-card__box {
+} */
 
 .category-card__tag {
 	position: absolute;
@@ -10,12 +10,12 @@
 	right: 0;
 	bottom: 0;
 	color: var(--white-color);
-	font-size: 27px;
+	font-size: 1.6875rem;
 	font-weight: 600;
 	text-align: center;
 	height: fit-content;
 	margin: auto;
 }
 
-.category-card__title {
-}
+/* .category-card__title {
+} */

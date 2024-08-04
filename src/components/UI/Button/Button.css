@@ -1,9 +1,9 @@
 /* src/components/Button/Button.css */
 
 .button {
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 600;
-	padding: 10px 16px;
+	padding: 0.625rem 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s;
 }

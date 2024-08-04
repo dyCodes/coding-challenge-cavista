@@ -66,19 +66,11 @@
 }
 
 /* Spacing utilities */
-
-.mt-2 {
-	margin-top: 8px;
+.mt-1 {
+	margin-top: 0.25rem;
 }
-.mb-2 {
-	margin-bottom: 8px;
-}
-
-.p-2 {
-	padding: 8px;
-}
-.p-3 {
-	padding: 12px;
+.pt-1 {
+	padding-top: 0.25rem;
 }
 
 /* Container utility */
