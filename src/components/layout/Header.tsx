@@ -1,10 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Button from '../UI/Button/Button';
+import { MEDIA_CATEGORIES } from '../../constants';
 
 interface Props {}
 
 const Header = (props: Props) => {
+	const { pathname } = useLocation();
+
+	const getHeaderText = (): string => {
+		const category = MEDIA_CATEGORIES.find((category) => pathname === category.link);
+		return category ? category.title : 'Popular Titles';
+	};
+
+	console.log(pathname);
+
 	return (
 		<header className='header'>
 			<div className='header__top bg-primary'>
@@ -27,7 +37,7 @@ const Header = (props: Props) => {
 
 			<div className='header__bottom bg-secondary'>
 				<div className='container'>
-					<h1 className='header__title'>Popular Titles</h1>
+					<h1 className='header__title'>{getHeaderText()}</h1>
 				</div>
 			</div>
 		</header>
