@@ -1,4 +1,4 @@
-export interface MediaItem {
+export interface MediaType {
 	title: string;
 	description: string;
 	programType: string;

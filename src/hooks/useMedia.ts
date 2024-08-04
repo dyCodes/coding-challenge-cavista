@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchMedia } from '../api/fetchMedia';
 
-type MediaType = 'movie' | 'series';
+type Props = 'movie' | 'series';
 
-const useMedia = (programType: MediaType) => {
+const useMedia = (programType: Props) => {
 	return useQuery({
 		queryKey: ['programType'],
 		queryFn: () => fetchMedia(programType),
-		// refetchOnMount: true,
+		refetchOnMount: true,
 	});
 };
 
