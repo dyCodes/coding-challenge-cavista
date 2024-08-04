@@ -1,0 +1,71 @@
+/* Header */
+.header__top {
+	padding-block: 18px;
+	position: relative;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.66);
+}
+
+.header__logo {
+	color: var(--white-color);
+	font-size: 33px;
+	font-weight: 600;
+}
+.header__link {
+	color: var(--white-color);
+	font-size: 15px;
+	font-weight: 600;
+}
+.header__btn {
+	margin-left: 32px;
+}
+
+.header__bottom {
+	padding-block: 18px;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.66);
+}
+.header__title {
+	color: var(--white-color);
+	font-size: 24px;
+	font-weight: 600;
+}
+
+/* Main */
+.main {
+	margin-top: 33px;
+	margin-bottom: 38px;
+	min-height: 50vh;
+}
+
+/* Footer */
+.footer {
+	background: var(--black-color);
+	color: #babfc3;
+	font-size: 14px;
+	padding-block: 32px;
+}
+
+.footer__top {
+	margin-bottom: 38px;
+}
+
+.footer__nav {
+	gap: 12px;
+	margin-bottom: 16px;
+}
+.footer__nav__link {
+	border-right: 1px solid #babfc3;
+	padding-right: 12px;
+}
+
+.footer__flex-row {
+	display: flex;
+	align-items: center;
+	gap: 0 22px;
+}
+
+.footer__social-icon {
+	height: 22px;
+}
+.footer__store-icon {
+	height: 40px;
+}
