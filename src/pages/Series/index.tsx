@@ -7,11 +7,13 @@ import LoadingScreen from '../../components/LoadingScreen';
 import ErrorScreen from '../../components/ErrorScreen';
 import useMedia from '../../hooks/useMedia';
 import { MediaType } from '../../types';
+import { sortMediaData } from '../../utils/helpers';
 
 interface Props {}
 
 const Series = (props: Props) => {
 	const [searchQuery, setSearchQuery] = useState('');
+	const [sortOption, setSortOption] = useState<string>('title_asc');
 	const { data, isFetching, isError } = useMedia('series');
 
 	if (isFetching) return <LoadingScreen />;
@@ -23,19 +25,25 @@ const Series = (props: Props) => {
 	}
 
 	// Filter data based on search query
-	const displayData = data
-		?.filter((item: MediaType) => item.title.toLowerCase().includes(searchQuery.toLowerCase()))
-		.slice(0, 21);
+	let displayData = data?.filter((item: MediaType) =>
+		item.title.toLowerCase().includes(searchQuery.toLowerCase())
+	);
+	// Sort data based on sort option
+	displayData = sortMediaData(displayData || [], sortOption).slice(0, 21);
 
 	const handleSearchChange = (query: string) => {
 		setSearchQuery(query);
+	};
+
+	const handleSortChange = (option: string) => {
+		setSortOption(option);
 	};
 
 	return (
 		<div className='container'>
 			<div className='listing-header flex-between'>
 				<SearchForm handleSearch={handleSearchChange} searchQuery={searchQuery} />
-				<FilterDropdown />
+				<FilterDropdown handleSortChange={handleSortChange} sortOption={sortOption} />
 			</div>
 
 			<MediaGrid>
@@ -43,6 +51,8 @@ const Series = (props: Props) => {
 					<MediaCard key={item.title} title={item.title} image={item.images['Poster Art'].url} />
 				))}
 			</MediaGrid>
+
+			{!displayData.length && <ErrorScreen text='No data found!' />}
 		</div>
 	);
 };
