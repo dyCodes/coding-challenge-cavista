@@ -13,8 +13,6 @@ const Header = (props: Props) => {
 		return category ? category.title : 'Popular Titles';
 	};
 
-	console.log(pathname);
-
 	return (
 		<header className='header'>
 			<div className='header__top bg-primary'>
