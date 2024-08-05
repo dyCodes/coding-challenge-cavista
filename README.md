@@ -13,6 +13,18 @@ This project is a React application that displays a list of movies and series us
 - Loading and error handling states
 - Pagination with a "View More" button
 
+## Screenshots
+
+**Known Issues:** Some images from the JSON feed are not displaying. This may be due to broken URLs in the provided JSON data.
+
+### Desktop View
+
+![desktop view](https://github.com/user-attachments/assets/63921481-993d-4c11-94b7-f8bfa61c4148)
+
+### Mobile View
+
+<img src="https://github.com/user-attachments/assets/ccb793e0-ef02-400a-af6e-0fe847a5a9b9" alt="mobile view" style="max-width: 420px;">
+
 ## Technologies Used
 
 - React
