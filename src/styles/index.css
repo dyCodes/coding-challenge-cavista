@@ -81,6 +81,18 @@ ol {
 }
 
 .listing-header {
-	gap: 16px 16px;
+	gap: 18px 16px;
 	margin-bottom: 2.75rem;
+}
+
+/* Responsive CSS */
+@media (max-width: 767px) {
+	.listing-header {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.listing-header > div {
+		width: 100%;
+		max-width: 100%;
+	}
 }

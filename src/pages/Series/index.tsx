@@ -15,7 +15,7 @@ interface Props {}
 const Series = (props: Props) => {
 	const { data, isFetching, isError } = useMedia('series');
 	const [searchQuery, setSearchQuery] = useState('');
-	const [sortOption, setSortOption] = useState<string>('title_asc');
+	const [sortOption, setSortOption] = useState<string>('');
 	const [visibleCount, setVisibleCount] = useState(21);
 
 	if (isFetching) return <LoadingScreen />;
