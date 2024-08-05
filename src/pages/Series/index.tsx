@@ -8,13 +8,15 @@ import ErrorScreen from '../../components/ErrorScreen';
 import useMedia from '../../hooks/useMedia';
 import { MediaType } from '../../types';
 import { sortMediaData } from '../../utils/helpers';
+import Button from '../../components/UI/Button/Button';
 
 interface Props {}
 
 const Series = (props: Props) => {
+	const { data, isFetching, isError } = useMedia('series');
 	const [searchQuery, setSearchQuery] = useState('');
 	const [sortOption, setSortOption] = useState<string>('title_asc');
-	const { data, isFetching, isError } = useMedia('series');
+	const [visibleCount, setVisibleCount] = useState(21);
 
 	if (isFetching) return <LoadingScreen />;
 
@@ -29,7 +31,10 @@ const Series = (props: Props) => {
 		item.title.toLowerCase().includes(searchQuery.toLowerCase())
 	);
 	// Sort data based on sort option
-	displayData = sortMediaData(displayData || [], sortOption).slice(0, 21);
+	displayData = sortMediaData(displayData || [], sortOption);
+
+	// Slice the data based on visibleCount
+	displayData = displayData.slice(0, visibleCount);
 
 	const handleSearchChange = (query: string) => {
 		setSearchQuery(query);
@@ -39,6 +44,11 @@ const Series = (props: Props) => {
 		setSortOption(option);
 	};
 
+	const handleViewMore = () => {
+		const newCount = data.length - visibleCount > 21 ? visibleCount + 21 : data.length;
+		setVisibleCount(newCount);
+	};
+
 	return (
 		<div className='container'>
 			<div className='listing-header flex-between'>
@@ -46,13 +56,24 @@ const Series = (props: Props) => {
 				<FilterDropdown handleSortChange={handleSortChange} sortOption={sortOption} />
 			</div>
 
-			<MediaGrid>
-				{displayData?.map((item: any) => (
-					<MediaCard key={item.title} title={item.title} image={item.images['Poster Art'].url} />
-				))}
-			</MediaGrid>
+			{displayData.length > 0 ? (
+				<>
+					<MediaGrid>
+						{displayData?.map((item: any) => (
+							<MediaCard key={item.title} title={item.title} image={item.images['Poster Art'].url} />
+						))}
+					</MediaGrid>
 
-			{!displayData.length && <ErrorScreen text='No data found!' />}
+					{/* Show view more button when there is more data to show */}
+					{displayData.length < data.length && !searchQuery && (
+						<div className='flex-center mt-4'>
+							<Button text='View More' modifier='primary' onClick={handleViewMore} />
+						</div>
+					)}
+				</>
+			) : (
+				<ErrorScreen text='No data found!' />
+			)}
 		</div>
 	);
 };

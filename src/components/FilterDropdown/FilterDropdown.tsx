@@ -13,7 +13,7 @@ const FilterDropdown: React.FC<Props> = ({ handleSortChange, sortOption }) => {
 				className='filter-dropdown__select'
 				onChange={(e) => handleSortChange(e.target.value)}
 				value={sortOption}>
-				<option value='' disabled selected>
+				<option value='' disabled>
 					Sort by
 				</option>
 				<option value='year_desc'>Year (Descending)</option>
